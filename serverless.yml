@@ -1,0 +1,49 @@
+service: demo-time
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+custom:
+  bucket_name: myjs-demo-time
+  file_bucket_name: ${self:service}-${opt:stage}-time-files
+  client:
+    bucketName: ${self:custom.bucket_name}
+    distributionFolder: static-files
+    errorDocument: index.html
+
+plugins:
+  - serverless-finch
+
+functions:
+  rekognize:
+    handler: handler.rekognize
+    memory: 128
+    environment:
+      ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
+      SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
+      S3_BUCKET:
+        Ref: FileStorageBucket
+    events:
+      - http:
+          method: post
+          path: rekognize
+          cors:
+            origin: '*'
+            allowCredentials: true
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+
+
+resources:
+  Resources:
+    FileStorageBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        AccessControl: BucketOwnerRead
+        BucketName: ${self:custom.file_bucket_name}
