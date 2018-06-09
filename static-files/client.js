@@ -1,22 +1,5 @@
-navigator.mediaDevices
-  .getUserMedia({
-    video: {
-      width: { min: 1280 },
-      height: { min: 720 }
-    }
-  })
-  .then(function(stream) {
-    var video = document.querySelector("video");
-    video.srcObject = stream;
-    video.onloadedmetadata = function(e) {
-      video.play();
-    };
-  })
-  .catch(function(err) {
-    console.log(err);
-  });
-
-const button = document.querySelector("button");
+const enableBtn = document.querySelector(".enable");
+const button = document.querySelector(".magic");
 const img = document.getElementById("myImg");
 const video = document.querySelector("video");
 const input = document.querySelector("input");
@@ -30,6 +13,33 @@ button.onclick = video.onclick = function() {
 
   button.disabled = true;
 };
+
+enableBtn.onclick = function() {
+  enable();
+};
+
+function enable() {
+  const cameras = [];
+  let constraints = {
+    video: true,
+    audio: false
+  };
+
+  navigator.mediaDevices
+    .getUserMedia(constraints)
+    .then(function(stream) {
+      var video = document.querySelector("video");
+      video.srcObject = stream;
+      video.onloadedmetadata = function(e) {
+        video.play();
+      };
+
+      enableBtn.classList.add("d-none");
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+}
 
 let blob;
 
