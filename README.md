@@ -1,3 +1,3 @@
-# Demo for MYJS conference
+# Demo for Serverless speech
 
-Demo code for serverless
+Code base of serverless pros demonstration.

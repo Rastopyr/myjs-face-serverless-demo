@@ -1,0 +1,55 @@
+<div class="text-center container justify-content-center">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron mt-3">
+        <h1 class="display-4">
+          Greyscale Image
+        </h1>
+        <p class="lead">
+          This service demonstrate Autoscaling solution based on <a href="https://aws.amazon.com/lambda/?nc1=h_ls" target="_blank">AWS Lambda</a>.
+        </p>
+
+        <p>
+          As business value this demo use <a href="https://github.com/oliver-moran/jimp" target="_blank">Jimp</a> for image converting and <a href="https://source.unsplash.com/" target="_blank"><strong>Unsplash</strong> Source</a> as random image source.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5 mt-5">
+    <div class="col-md-12">
+      <p class="text-center">
+        For simple demo of service call this command in CLI:
+      </p>
+
+      <p class="text-muted lead">
+        <code>
+          curl https://19o3qcek71.execute-api.us-east-1.amazonaws.com/speech/greyscale?url=ImageUrl
+        </code>
+      </p>
+    </div>
+  </div>
+
+  <div class="row mb-5 mt-5 justify-content-center">
+    <p class="text-center">
+      For load test call this command in CLI:
+    </p>
+
+    <p class="text-muted lead">
+      <code>
+        wrk -d60s -c100 -t8 https://19o3qcek71.execute-api.us-east-1.amazonaws.com/speech/greyscale
+      </code>
+    </p>
+
+    <div class="col-md-6">
+      <p class="text-center">
+        This command depends of <code>wrk</code> tool. AWS Lambda instance will request 60 seconds by 100 concurrent requests
+        and use 8 thread on host(your) machine.
+      </p>
+    </div>
+  </div>
+
+  <div class="row mb-5 mt-5">
+
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">
+      Serverless Demo
+    </h1>
+    <p class="lead text-muted">
+      This site demonstrate the power and opportunitues of <code>AWS Lambda</code> tool.
+    </p>
+    <p class="lead">
+      All demos from this site is enabled when i tell about it on some conferences. <a href="https://twitter.com/rastopyr" target="_blank">(@rastopyr)</a>.
+      If you want understand how it works, you can go to <a href="https://github.com/Rastopyr/serverless-speech-demo" targer="_blank">github</a> repo of this project and fully explore code-base.
+    </p>
+  </div>
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img src="/assets/rekgnition-thumb.png" alt="" class="card-img-top">
+          <div class="card-body">
+            <div class="card-text mb-2">
+              Example of simple using aws services with lambda for achievements business goal.
+              As business goal service detect face on capture of camera.
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+
+              {{#link-to 'rekognition' class="btn btn-link btn-sm btn-outline-secondary"}}
+                Re<b>k</b>ognize
+              {{/link-to}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img src="/assets/greyscale.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <div class="card-text mb-2">
+              AWS Lambda can scale is very efficient. This autoscale service can greyscale image with Lambda and store to S3 and it is very concurrent.
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+
+              {{#link-to 'scale-greyscale' class="btn btn-link btn-sm btn-outline-secondary"}}
+                Greyscale image
+              {{/link-to}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{outlet}}

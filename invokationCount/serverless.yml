@@ -1,0 +1,20 @@
+service: invokation-count
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  invokationCount:
+    handler: handler.invokationCount
+    memorySize: 128
+    environment:
+      ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
+      SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
+    events:
+      - http:
+          method: get
+          path: invokationCount
+          cors:
+            origin: '*'
+            allowCredentials: true

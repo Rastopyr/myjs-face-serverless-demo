@@ -1,0 +1,20 @@
+<div class="row justify-content-center align-items-center mt-4">
+  <div class="col-md-12">
+    <button {{action makeMagic}} disabled="{{if isLoading 'disabled'}}" class="btn btn-lg btn-primary magic ">
+      <i class="fa fa-magic"></i> Magic
+    </button>
+  </div>
+</div>
+
+<div class="row mb-5 mt-5">
+  <div class="col-md-6">
+    <video autoplay></video>
+  </div>
+
+  <div class="col-md-6">
+    <img id="myImg" />
+    <canvas id="myCanvas" width="400" height="200">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+  </div>
+</div>

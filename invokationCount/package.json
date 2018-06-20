@@ -1,0 +1,14 @@
+{
+  "name": "invokation-count",
+  "version": "0.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rastopyr <rastopyr@gmail.com> (http://rastopyr.github.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.259.1"
+  }
+}

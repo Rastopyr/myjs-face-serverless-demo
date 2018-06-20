@@ -1,0 +1,16 @@
+
+service: demo-frontend
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+plugins:
+  - serverless-finch
+
+custom:
+  bucket_name: sls-speech.rastopyr.com
+  client:
+    bucketName: ${self:custom.bucket_name}
+    distributionFolder: dist
+    errorDocument: index.html

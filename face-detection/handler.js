@@ -5,7 +5,7 @@ const AWS = require("aws-sdk");
 AWS.config.update({
   accessKeyId: process.env.ACCESS_KEY_ID,
   secretAccessKey: process.env.SECRET_ACCESS_KEY,
-  rehion: "us-east-1"
+  region: "us-east-1"
 });
 
 const rek = new AWS.Rekognition();
@@ -26,9 +26,8 @@ function rekognize(event, ctx, cb) {
     .detectFaces(rekParams)
     .promise()
     .then(({ FaceDetails }) => {
-      console.log(FaceDetails);
       cb(null, {
-        statusCode: 200,
+        statusCode: 201,
         headers: {
           "Access-Control-Allow-Origin": origin,
           "Access-Control-Allow-Credentials": true
@@ -40,9 +39,8 @@ function rekognize(event, ctx, cb) {
       });
     })
     .catch(err => {
-      console.log(err);
       cb(null, {
-        statusCode: 200,
+        statusCode: 500,
         bheaders: {
           "Access-Control-Allow-Origin": origin,
           "Access-Control-Allow-Credentials": true

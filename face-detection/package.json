@@ -1,0 +1,17 @@
+{
+  "name": "demo-time",
+  "version": "0.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rastopyr <rastopyr@gmail.com> (http://rastopyr.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.254.1"
+  },
+  "devDependencies": {
+    "serverless-finch": "^2.1.2"
+  }
+}

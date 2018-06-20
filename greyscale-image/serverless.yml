@@ -1,0 +1,30 @@
+service: greyscale-image
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  greyscale:
+    handler: handler.greyscale
+    environment:
+      REGION: ${env:AWS_ACCESS_KEY_ID}
+      ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
+      SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
+      RESULT_IMAGE_BUCKET:
+        Ref: ResultBucket
+    events:
+      - http:
+          method: get
+          path: greyscale
+          cors:
+            origin: '*'
+            allowCredentials: true
+
+resources:
+  Resources:
+    ResultBucket:
+      Type: "AWS::S3::Bucket"
+      Properties:
+        AccessControl: PublicRead
+        BucketName: ${self:service}-${opt:stage}-result

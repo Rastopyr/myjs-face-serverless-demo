@@ -1,0 +1,10 @@
+.container {
+  video,
+  canvas {
+    width: 100%;
+  }
+
+  img {
+    display: none;
+  }
+}

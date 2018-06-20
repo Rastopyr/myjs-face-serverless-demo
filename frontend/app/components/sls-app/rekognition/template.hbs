@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-12">
+    {{yield (hash
+      detect=(component "sls-app/rekognition/detect")
+      lead=(component "sls-app/rekognition/lead")
+    )}}
+
+  </div>
+</div>

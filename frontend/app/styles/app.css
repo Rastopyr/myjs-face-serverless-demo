@@ -1,0 +1,31 @@
+:global(.jumbotron) {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin-bottom: 0;
+  background-color: #fff;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  :global(.jumbotron-heading) {
+    font-weight: 300;
+  }
+
+  :global(.container) {
+    max-width: 40rem;
+  }
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+:global(.box-shadow) {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
